@@ -48,6 +48,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
         Log.e(TAG, "onCreateViewHolder: " + position);
 
+        // 在onCreateViewHolder中记载布局条目
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_recycler, parent, false));
         return holder;
     }
@@ -56,24 +57,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int position) {
         Log.e(TAG, "onBindViewHolder: " + position);
 
+        // 在onBindViewHolder中将视图与数据进行绑定
         myViewHolder.tv.setText(mList.get(position));
 
         if (mOnItemClickListener != null) {
-            myViewHolder.tv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int layoutPosition = myViewHolder.getLayoutPosition();
-                    mOnItemClickListener.onItemClick(myViewHolder.tv, layoutPosition);
-                }
+            myViewHolder.tv.setOnClickListener(v -> {
+                int layoutPosition = myViewHolder.getLayoutPosition();
+                mOnItemClickListener.onItemClick(myViewHolder.tv, layoutPosition);
             });
 
-            myViewHolder.tv.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    int layoutPosition = myViewHolder.getLayoutPosition();
-                    mOnItemClickListener.onItemLongClick(myViewHolder.tv, layoutPosition);
-                    return false;
-                }
+            myViewHolder.tv.setOnLongClickListener(v -> {
+                int layoutPosition = myViewHolder.getLayoutPosition();
+                mOnItemClickListener.onItemLongClick(myViewHolder.tv, layoutPosition);
+                return false;
             });
         }
     }
