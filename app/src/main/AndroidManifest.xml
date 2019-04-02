@@ -16,7 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".chapter01.Chapter01MainActivity"></activity>
+
+        <!-- Chapter 1 -->
+        <activity android:name=".chapter01.Chapter01MainActivity" />
+        <activity android:name=".chapter01.myrecyclerview.RecyclerViewActivity" />
+        <activity android:name=".chapter01.mycardview.CardViewActivity" />
+        <activity android:name=".chapter01.mynotification.NotificationActivity" />
+
     </application>
 
 </manifest>

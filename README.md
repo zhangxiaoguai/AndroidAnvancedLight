@@ -20,7 +20,11 @@
 
 #### RecycleView
 
-    水平/垂直布局管理器，Adapter，自定义分割线，设置增加/删除动画，item点击事件，
+    水平/垂直布局管理器，Adapter，自定义分割线，设置增加/删除动画，item点击事件，GridView布局管理器，实现瀑布流
+
+#### CardView
+
+
 
 ### Android 6.0新特性
 
